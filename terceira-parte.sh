@@ -55,15 +55,15 @@ clear
 echo -e "$seta ${blue}Instalando o ambiente Cinnamon e alguns pacotes${end}"
 sleep 2s
 clear
-echo $senha | sudo -S pacman -S xorg cinnamon cinnamon-translations gdm gdm3setup gdm3setup-utils nemo nemo-share nemo-fileroller intel-ucode xfce4-terminal xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl wget xf86-input-synaptics pavucontrol alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez blueman bluez-utils --noconfirm
+echo $senha | sudo -S pacman -S xorg budgie-desktop gdm gdm3setup gdm3setup-utils nemo nemo-share nemo-fileroller intel-ucode xfce4-terminal xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl wget xf86-input-synaptics pavucontrol alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez blueman bluez-utils --noconfirm
 
 echo -e "$seta ${yellow}Aperte enter para continuar${end}"
 read
 clear
 
-echo -e "$seta ${blue}Iniciando o lightdm${end}"
+echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 2s
-echo $senha | sudo -S systemctl enable lightdm
+echo $senha | sudo -S systemctl enable gdm
 echo -e "$seta ${yellow}Aperte enter para continuar${end}"
 read
 clear
@@ -145,4 +145,3 @@ echo -e "$seta ${blue}Reiniciando o sistema${end}"
 sleep 2s
 echo $senha | sudo -S reboot now
 clear
-
