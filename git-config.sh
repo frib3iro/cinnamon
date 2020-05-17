@@ -63,6 +63,7 @@ else
     echo -e "$seta ${blue}Fazendo o push.${end}"
     sleep 1s
     git push origin master
+    sleep 2s
     clear
 fi
 
