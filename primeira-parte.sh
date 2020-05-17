@@ -114,7 +114,7 @@ clear
 
 echo -e "$seta ${blue}Instalar os pacotes base${end}"
 sleep 1s
-pacstrap /mnt base base-devel linux linux-firmware 
+pacstrap /mnt base base-devel linux linux-firmware vim git wget
 clear
 
 echo -e "$seta ${blue}Gerando o fstab${end}"
