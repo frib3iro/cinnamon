@@ -19,6 +19,7 @@ echo -e "$seta ${blue}Bem vindo a instalação do Arch Linux${end}"
 sleep 1s
 clear
 
+# Definindo layout do teclado
 echo -e "$seta ${blue}Definir o layout do teclado${end}"
 sleep 1s
 loadkeys br-abnt2
@@ -81,14 +82,15 @@ clear
 echo -e "$seta ${blue}Montando as partições${end}"
 sleep 1s
 mount ${disco}2 /mnt
-mkdir -p /mnt/boot
-mount ${disco}1 /mnt/boot
+mkdir -p /mnt/boot/efi
+mount ${disco}1 /mnt/boot/efi
 clear
 
 # Listando partições
 echo -e "$seta ${blue}Conferindo as partições${end}"
 sleep 1s
 lsblk ${disco}
+sleep 3s
 clear
 
 # Configurando mirrorlist
@@ -114,7 +116,7 @@ clear
 
 echo -e "$seta ${blue}Instalar os pacotes base${end}"
 sleep 1s
-pacstrap /mnt base base-devel linux linux-firmware vim git wget
+pacstrap /mnt base base-devel linux linux-firmware
 clear
 
 echo -e "$seta ${blue}Gerando o fstab${end}"

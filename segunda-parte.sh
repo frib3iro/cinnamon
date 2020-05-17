@@ -88,7 +88,7 @@ clear
 echo -e "${seta} ${blue}Baixando o Gerenciador de boot e mais alguns pacotes${end}"
 sleep 1s
 clear
-pacman -S grub efibootmgr networkmanager network-manager-applet dosfstools linux-headers vim git --noconfirm
+pacman -S grub efibootmgr networkmanager network-manager-applet dosfstools linux-headers vim git wget --noconfirm
 clear
 
 echo -e "${seta} ${blue}Instalando o GRUB${end}"
