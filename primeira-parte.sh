@@ -94,7 +94,7 @@ clear
 # Configurando mirrorlist
 echo -e "$seta ${blue}Instalando reflector${end}"
 sleep 1s
-pacman -Syy reflector
+pacman -Syy reflector --noconfirm
 clear
 
 echo -e "$seta ${blue}Fazendo backup do mirrorlist${end}"
