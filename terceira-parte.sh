@@ -62,22 +62,16 @@ sleep 1s
 git clone https://aur.archlinux.org/yay.git
 cd yay/
 makepkg -si PKGBUILD --noconfirm
-echo -e "$seta ${yellow}Aperte enter para continuar${end}"
-read
 clear
 
 echo -e "$seta ${blue}Instalando as fontes${end}"
 sleep 1s
 yay -S ttf-ubuntu-font-family --noconfirm
-echo -e "$seta ${yellow}Aperte enter para continuar${end}"
-read
 clear
 
 echo -e "$seta ${blue}Instalando google-chrome${end}"
 sleep 1s
 yay -S google-chrome --noconfirm
-echo -e "$seta ${yellow}Aperte enter para continuar${end}"
-read
 clear
 
 # echo -e "${seta} ${blue}Definindo o layout do teclado no ambiente cinnamon${end}"
