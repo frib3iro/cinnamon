@@ -81,8 +81,8 @@ clear
 echo -e "$seta ${blue}Montando as partições${end}"
 sleep 1s
 mount ${disco}2 /mnt
-mkdir -p /mnt/boot/EFI
-mount ${disco}1 /mnt/boot/EFI
+mkdir -p /mnt/boot
+mount ${disco}1 /mnt/boot
 clear
 
 # Listando partições
