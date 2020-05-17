@@ -45,11 +45,12 @@ clear
 echo -e "$seta ${blue}Instalando o ambiente Budgie e alguns pacotes${end}"
 sleep 1s
 clear
-echo $senha | sudo -S pacman -S xorg budgie-desktop xfce4-terminal xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl wget xf86-input-synaptics pavucontrol alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez blueman bluez-utils --noconfirm
+echo $senha | sudo -S pacman -S xorg gnome gnome-tweak-tool xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl wget xf86-input-synaptics pavucontrol alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez blueman bluez-utils --noconfirm
 
 echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
-echo $senha | sudo -S systemctl enable gdm
+echo $senha | sudo -S sudo systemctl start gdm.service
+echo $senha | sudo -S sudo systemctl enable gdm.service
 clear
 
 echo -e "$seta ${blue}Iniciando o Bluetooth${end}"
