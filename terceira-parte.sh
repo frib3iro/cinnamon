@@ -28,21 +28,15 @@ clear
 
 echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
 sleep 1s
-echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-screensaver cinnamon-session cinnamon-session-common cinnamon-settings-daemon --noconfirm
+echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-screensaver cinnamon-session cinnamon-settings-daemon --noconfirm
+read
 clear
 
 echo -e "$seta ${blue}Instalando alguns pacotes${end}"
 sleep 1s
 clear
-echo $senha | sudo -S pacman -S xorg gdm nemo nemo-share nemo-fileroller gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility xfce4-terminal xterm --noconfirm
-
-echo -e "$seta ${blue}Instalando temas linux-mint{end}"
-sleep 1s
-echo $senha | sudo -S sudo systemctl enable bluetooth && sudo systemctl start bluetooth
-clear
-echo -e "$seta ${blue}Iniciando o Bluetooth${end}"
-sleep 1s
-echo $senha | sudo -S sudo systemctl enable bluetooth && sudo systemctl start bluetooth
+echo $senha | sudo -S pacman -S xorg gdm nemo nemo-share nemo-fileroller gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups  bluez-tools vim git wget alsa-utils blueberry bzip2 gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility xfce4-terminal xterm --noconfirm
+read
 clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
@@ -50,11 +44,6 @@ sleep 1s
 git clone https://aur.archlinux.org/yay.git
 cd yay/
 makepkg -si PKGBUILD --noconfirm
-clear
-
-echo -e "$seta ${blue}Uma interface para configurar GDM3${end}"
-sleep 1s
-yay -S gdm3setup-utils --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando as fontes${end}"
