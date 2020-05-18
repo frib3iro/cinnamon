@@ -65,14 +65,16 @@ clear
 # Iniciando particionamento
 echo -e "$seta ${blue}Iniciando particionamento${end}"
 sleep 1s
-# Para maquina vietual
-(echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
-clear
+fdisk ${disco}
+
+# Para maquina virtual
+# (echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
+# echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+# read
+# clear
 # Para o pc real
-#(echo d; echo ""; echo d; echo ""; echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
-clear
+# echo d; echo ""; echo d; echo ""; echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
+# clear
 
 # Formatando partições
 echo -e "$seta ${blue}Formatando as partições${end}"
