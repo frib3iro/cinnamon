@@ -48,7 +48,7 @@ clear
 echo -e "$seta ${blue}Instalando alguns pacotes${end}"
 sleep 1s
 clear
-echo $senha | sudo -S pacman -S xorg gdm gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode--noconfirm
+echo $senha | sudo -S pacman -S xorg gdm gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility --noconfirm
 
 echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
