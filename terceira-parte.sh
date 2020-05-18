@@ -42,20 +42,24 @@ clear
 
 echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
 sleep 1s
-echo $senha | sudo -S pacman -S cinnamon cinnamon-common cinnamon-control-center cinnamon-control-center-data cinnamon-control-center-dbg cinnamon-dbg cinnamon-desktop-data cinnamon-l10n cinnamon-screensaver cinnamon-session cinnamon-session-common cinnamon-settings-daemon
+echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-common cinnamon-control-center cinnamon-control-center-data cinnamon-control-center-dbg cinnamon-dbg cinnamon-desktop-data cinnamon-l10n cinnamon-screensaver cinnamon-session cinnamon-session-common cinnamon-settings-daemon --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando alguns pacotes${end}"
 sleep 1s
 clear
-echo $senha | sudo -S pacman -S xorg gdm gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility --noconfirm
+echo $senha | sudo -S pacman -S xorg gdm nemo nemo-share nemo-fileroller gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility --noconfirm
 
 echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
-echo $senha | sudo -S sudo systemctl start gdm.service
-echo $senha | sudo -S sudo systemctl enable gdm.service
+echo $senha | sudo -S sudo systemctl start gdm
+echo $senha | sudo -S sudo systemctl enable gdm
 clear
 
+echo -e "$seta ${blue}Instalando temas linux-mint{end}"
+sleep 1s
+echo $senha | sudo -S sudo systemctl enable bluetooth && sudo systemctl start bluetooth
+clear
 echo -e "$seta ${blue}Iniciando o Bluetooth${end}"
 sleep 1s
 echo $senha | sudo -S sudo systemctl enable bluetooth && sudo systemctl start bluetooth
@@ -75,7 +79,13 @@ clear
 
 echo -e "$seta ${blue}Instalando as fontes${end}"
 sleep 1s
+yay -S ttf-ms-fonts --noconfirm
 yay -S ttf-ubuntu-font-family --noconfirm
+clear
+
+echo -e "$seta ${blue}Instalando o mint-themes${end}"
+sleep 1s
+yay -S mint-themes mint-y-icons mint-x-icons --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando google-chrome${end}"
