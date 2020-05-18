@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variaveis
-senha=cp1113bug6u
+senha='cp1113bug6u'
 blue='\e[34;1m'
 green='\e[32;1m'
 red='\e[31;1m'
@@ -16,22 +16,20 @@ sleep 1s
 clear
 
 # Configurando mirrorlist
-echo -e "$seta ${blue}Instalando reflector${end}"
-sleep 1s
-echo $senha | sudo -S pacman -S reflector --noconfirm
-clear
-
 echo -e "$seta ${blue}Fazendo backup do mirrorlist${end}"
 sleep 1s
-echo $senha | sudo -S cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 clear
-
-echo -e "$seta ${blue}Selecionando os espelhos mais rápidos${end}"
+echo -e "${seta} ${end}Comentando todos os servidores"
 sleep 1s
-echo $senha | sudo -S reflector -c Brazil -a  6 --sort rate --save /etc/pacman.d/mirrorlist
+sed 's/^Ser/#Ser/' ${mirror} > ${mirror}.bkp
+clear
+echo -e "${seta} ${end}Descomentando os servidores Brasileiros"
+sleep 1s
+sed '/Brazil/{n;s/^#//}' ${mirror}.bkp > ${mirror}
 clear
 
-echo -e "$seta ${blue}Atualizando os repositórios${end}"
+echo -e "${seta} ${end}Atualizando os repositórios"
 sleep 1s
 echo $senha | sudo -S pacman -Syyy
 clear
@@ -42,10 +40,15 @@ sleep 1s
 echo $senha | sudo -S pacman -S xf86-video-intel --noconfirm
 clear
 
-echo -e "$seta ${blue}Instalando o ambiente Budgie e alguns pacotes${end}"
+echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
+sleep 1s
+echo $senha | sudo -S pacman -S cinnamon cinnamon-common cinnamon-control-center cinnamon-control-center-data cinnamon-control-center-dbg cinnamon-dbg cinnamon-desktop-data cinnamon-l10n cinnamon-screensaver cinnamon-session cinnamon-session-common cinnamon-settings-daemon
+clear
+
+echo -e "$seta ${blue}Instalando alguns pacotes${end}"
 sleep 1s
 clear
-echo $senha | sudo -S pacman -S xorg xfce4 xfce4-goodies gdm gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics pavucontrol alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez blueman bluez-utils --noconfirm
+echo $senha | sudo -S pacman -S xorg gdm gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode--noconfirm
 
 echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
@@ -63,6 +66,11 @@ sleep 1s
 git clone https://aur.archlinux.org/yay.git
 cd yay/
 makepkg -si PKGBUILD --noconfirm
+clear
+
+echo -e "$seta ${blue}Uma interface para configurar GDM3${end}"
+sleep 1s
+yay -S gdm3setup-utils --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando as fontes${end}"
