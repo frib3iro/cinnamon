@@ -15,20 +15,6 @@ echo -e "$seta ${blue}Bem vindo a terceira parte da instalação!${end}"
 sleep 1s
 clear
 
-# # Configurando mirrorlist
-# echo -e "$seta ${blue}Fazendo backup do mirrorlist${end}"
-# sleep 1s
-# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-# clear
-# echo -e "${seta} ${blue}Comentando todos os servidores"
-# sleep 1s
-# sed 's/^Ser/#Ser/' ${mirror} > ${mirror}.bkp
-# clear
-# echo -e "${seta} ${blue}Descomentando os servidores Brasileiros${end}"
-# sleep 1s
-# sed '/Brazil/{n;s/^#//}' ${mirror}.bkp > ${mirror}
-# clear
-
 echo -e "${seta} ${blue}Atualizando os repositórios${end}"
 sleep 1s
 echo $senha | sudo -S pacman -Syyy
@@ -49,12 +35,6 @@ echo -e "$seta ${blue}Instalando alguns pacotes${end}"
 sleep 1s
 clear
 echo $senha | sudo -S pacman -S xorg gdm nemo nemo-share nemo-fileroller gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completionbluez bluez-cups bluez-obexd bluez-tools vim git wget adobe-flashplugin alsa-utils blueberry bluetooth bzip2 dmz-cursor-theme eject gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice intel-ucode xreader gnome-disk-utility xfce4-terminal xterm --noconfirm
-
-echo -e "$seta ${blue}Iniciando o gdm${end}"
-sleep 1s
-echo $senha | sudo -S sudo systemctl start gdm
-echo $senha | sudo -S sudo systemctl enable gdm
-clear
 
 echo -e "$seta ${blue}Instalando temas linux-mint{end}"
 sleep 1s
@@ -107,7 +87,9 @@ clear
 # read
 # clear
 
-echo -e "$seta ${blue}Reiniciando o sistema${end}"
+echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
-echo $senha | sudo -S reboot now
+echo $senha | sudo -S sudo systemctl start gdm
+echo $senha | sudo -S sudo systemctl enable gdm
 clear
+
