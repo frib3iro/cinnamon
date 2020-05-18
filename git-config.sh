@@ -18,18 +18,18 @@ if [[ "$resposta" == @(S|s) ]]; then
     clear
 
     echo -e "$seta ${blue}Configurando nome de usuário.${end}"
-    sleep 1s
     git config --global user.name Fabio Ribeiro
+    sleep 1s
     clear
 
     echo -e "$seta ${blue}Configurando email.${end}"
-    sleep 1s
     git config --global user.email rib3iro@live.com
+    sleep 1s
     clear
 
     echo -e "$seta ${blue}Configurando editor padrão.${end}"
-    sleep 1s
     git config --global core.editor vim 
+    sleep 1s
     clear
 
     echo -e "$seta ${blue}Configurando o vimdiff.${end}"
@@ -38,33 +38,28 @@ if [[ "$resposta" == @(S|s) ]]; then
     clear
 
     echo -e "$seta ${blue}Listando a configuração do git.${end}"
-    sleep 1s
     git config --list
-    sleep 5s
+    sleep 3s
     clear
 else
     echo -e "$seta ${blue}Adicionando arquivos.${end}"
-    sleep 1s
     git add *
+    sleep 1s
     clear
 
     echo -e "$seta ${blue}Verificando o status.${end}"
-    sleep 1s
     git status
     sleep 3s
     clear
 
     echo -e "$seta ${blue}Fazendo o commit.${end}"
-    sleep 1s
     # echo -en "$seta ${blue}Digite o texto do commit:${end} "
     git commit -m "$texto"
+    sleep 1s
     clear
 
     echo -e "$seta ${blue}Fazendo o push.${end}"
-    sleep 1s
     git push origin master
-    sleep 2s
-    clear
 fi
 
 
