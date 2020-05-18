@@ -20,16 +20,16 @@ echo -e "$seta ${blue}Fazendo backup do mirrorlist${end}"
 sleep 1s
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 clear
-echo -e "${seta} ${end}Comentando todos os servidores"
+echo -e "${seta} ${blue}Comentando todos os servidores"
 sleep 1s
 sed 's/^Ser/#Ser/' ${mirror} > ${mirror}.bkp
 clear
-echo -e "${seta} ${end}Descomentando os servidores Brasileiros"
+echo -e "${seta} ${blue}Descomentando os servidores Brasileiros${end}"
 sleep 1s
 sed '/Brazil/{n;s/^#//}' ${mirror}.bkp > ${mirror}
 clear
 
-echo -e "${seta} ${end}Atualizando os repositórios"
+echo -e "${seta} ${blue}Atualizando os repositórios${end}"
 sleep 1s
 echo $senha | sudo -S pacman -Syyy
 clear
