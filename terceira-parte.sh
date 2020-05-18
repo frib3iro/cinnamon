@@ -24,23 +24,37 @@ clear
 echo -e "$seta ${blue}Instalando os drivers de vídeo${end}"
 sleep 1s
 echo $senha | sudo -S pacman -S xf86-video-intel intel-ucode --noconfirm
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
 clear
 
 echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
 sleep 1s
 echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-screensaver cinnamon-session cinnamon-session-common cinnamon-settings-daemon --noconfirm
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+clear
 clear
 
 echo -e "$seta ${blue}Instalando o nemo${end}"
 sleep 1s
 echo $senha | sudo -S pacman -S nemo nemo-preview nemo-share nemo-fileroller --noconfirm
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+clear
 clear
 
 echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
 sleep 1s
 echo $senha | sudo -S pacman -S p7zip p7zip-full unrar unzip zip bzip2 --noconfirm
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+clear
 
 echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch gdm bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-obexd bluez-tools vim git wget alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg ufw adwaita-icon-theme accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump ufw colord coreutils cpio --noconfirm
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
 sleep 1s
