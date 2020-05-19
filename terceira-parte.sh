@@ -43,7 +43,7 @@ clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
 sleep 1s
-echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch gdm bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-tools alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar archlinux-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg gufw ufw accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump colord coreutils cpio ttf-hack --noconfirm
+echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch gdm bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-tools alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar archlinux-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg gufw ufw accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump colord coreutils cpio ttf-hack neofetch cmatrix --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
@@ -90,6 +90,7 @@ clear
 
 echo -e "$seta ${blue}Iniciando o gdm${end}"
 sleep 1s
+xdg-user-dirs-update
 echo $senha | sudo -S sudo systemctl enable gdm
 echo $senha | sudo -S sudo systemctl start gdm
 clear
