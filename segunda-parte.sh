@@ -59,7 +59,7 @@ sleep 1s
 export LANG=pt_BR.UTF-8
 clear
 
-echo -e "$seta ${blue}Atualizando o relógio do sistema${end}"
+echo -e "${seta} ${blue}Atualizando o relógio do sistema${end}"
 sleep 1s
 timedatectl set-ntp true
 clear
