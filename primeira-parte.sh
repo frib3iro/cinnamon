@@ -58,31 +58,28 @@ echo -en "$seta ${blue}Informe o nome do seu disco: ${end}"
 sleep 1s
 read disco
 disco=/dev/${disco}
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
 clear
 
 # Iniciando particionamento
 echo -e "$seta ${blue}Iniciando particionamento${end}"
-sleep 1s
-fdisk ${disco}
-
+sleep 2s
 # Para maquina virtual
-# (echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
-# echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-# read
-# clear
-# Para o pc real
-# echo d; echo ""; echo d; echo ""; echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
-# clear
+#(echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
+#echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+#read
+#clear
+
+# Para a maquina real
+(echo d; echo ""; echo d; echo ""; echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+clear
 
 # Formatando partições
 echo -e "$seta ${blue}Formatando as partições${end}"
 sleep 1s
 mkfs.fat -F32 ${disco}1
 mkfs.ext4 ${disco}2
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
 clear
 
 # Montando partições
@@ -91,16 +88,12 @@ sleep 1s
 mount ${disco}2 /mnt
 mkdir -p /mnt/boot/EFI
 mount ${disco}1 /mnt/boot/EFI
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
 clear
 
 # Listando partições
 echo -e "$seta ${blue}Conferindo as partições${end}"
 sleep 1s
 lsblk ${disco}
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
 clear
 
 # Configurando mirrorlist
