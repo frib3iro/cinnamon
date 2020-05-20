@@ -87,11 +87,6 @@ yay -Ss xcursor-breeze --noconfirm
 sleep 2s
 clear
 
-echo -e "$seta ${blue}Instalando o cinnamon-sound-effects${end}"
-yay -S cinnamon-sound-effects --noconfirm
-sleep 2s
-clear
-
 echo -e "$seta ${blue}Instalando o gnome-online-accounts-git${end}"
 yay -S gnome-online-accounts-git --noconfirm
 sleep 2s
