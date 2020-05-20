@@ -122,11 +122,13 @@ sleep 1s
 if xdg-user-dirs-update; then
     echo "$seta ${green}xdg-update iniciado com sucesso!${end}"
     sleep 2s
+    clear
 else
     echo "$seta ${red}não foi possível iniciar o xdg-update!${end}"
     sleep 2s
-    exit 1
-clear
+    clear
+    continue 
+fi
 
 echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
 echo $senha | sudo -S pacman -S lightdm
