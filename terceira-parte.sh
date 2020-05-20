@@ -43,7 +43,7 @@ clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
 sleep 1s
-echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-tools alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar archlinux-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg gufw ufw accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump colord coreutils cpio ttf-hack neofetch cmatrix gnome-screenshot system-config-printer gnome-keyring gnome-system-monitor baobab htop lollypop --noconfirm
+echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-tools alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar archlinux-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg gufw ufw accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump colord coreutils cpio ttf-hack neofetch cmatrix system-config-printer gnome-keyring gnome-system-monitor baobab htop lollypop nemo-python  ffmpegthumbnailer --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
@@ -52,12 +52,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay/
 makepkg -si PKGBUILD --noconfirm
 clear
-
-echo -e "$seta ${blue}Instalando pamac-aur${end}"
-sleep 1s
-yay -S pamac-aur --noconfirm
-clear
-
 
 echo -e "$seta ${blue}Instalando cinnamon-sound-effects${end}"
 sleep 1s
@@ -78,6 +72,26 @@ clear
 echo -e "$seta ${blue}Instalando o mint-themes${end}"
 sleep 1s
 yay -S mint-themes mint-y-icons mint-x-icons mint-backgrounds mintlocale --noconfirm
+clear
+
+echo -e "$seta ${blue}Instalando o timeshift${end}"
+sleep 1s
+yay -S timeshift --noconfirm
+clear
+
+echo -e "$seta ${blue}Instalando o xcursor-breeze${end}"
+sleep 1s
+yay -Ss xcursor-breeze --noconfirm
+clear
+
+echo -e "$seta ${blue}Instalando o cinnamon-sound-effects${end}"
+sleep 1s
+yay -S cinnamon-sound-effects --noconfirm
+clear
+
+echo -e "$seta ${blue}Instalando o gnome-online-accounts-git${end}"
+sleep 1s
+yay -S gnome-online-accounts-git --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando o google-chrome${end}"
@@ -114,6 +128,12 @@ else
     exit 1
 clear
 
+#echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
+#sleep 1s
+#echo $senha | sudo -S pacman -S lightdm
+#yay -S lightdm lightdm-settings lightdm-slick-greeter
+#echo $senha | sudo -Ssudo systemctl enable lightdm 
+#clear
 
 echo -e "$seta ${blue}Instalando e iniciando o gdm${end}"
 sleep 1s
