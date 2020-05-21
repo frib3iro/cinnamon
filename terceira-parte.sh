@@ -56,6 +56,11 @@ makepkg -si PKGBUILD --noconfirm
 sleep 2s
 clear
 
+echo -e "$seta ${blue}Instalando gnome-terminal-transparency${end}"
+yay -Ss gnome-terminal-transparency --noconfirm
+sleep 2s
+clear
+
 echo -e "$seta ${blue}Instalando cinnamon-sound-effects${end}"
 yay -S cinnamon-sound-effects --noconfirm
 sleep 2s
