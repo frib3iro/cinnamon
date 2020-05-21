@@ -66,6 +66,11 @@ yay -S cinnamon-sound-effects --noconfirm
 sleep 2s
 clear
 
+echo -e "$seta ${blue}Instalando spotify${end}"
+yay -S spotify --noconfirm
+sleep 2s
+clear
+
 echo -e "$seta ${blue}Instalando o xviewer${end}"
 yay -S xviewer xviewer-plugins --noconfirm
 sleep 2s
