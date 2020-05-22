@@ -26,15 +26,56 @@ echo $senha | sudo -S pacman -S xf86-video-intel intel-ucode --noconfirm
 sleep 2s
 clear
 
-echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
-echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-screensaver cinnamon-session cinnamon-settings-daemon --noconfirm
-sleep 2s
-clear
+### Ambientes desktop
+deepin(){
+    echo -e "$seta ${blue}Instalando o deepin desktop${end}"
+    echo $senha | sudo -S pacman -S deepin --noconfirm
+    sleep 2s
+    clear
 
-echo -e "$seta ${blue}Instalando o nemo${end}"
-echo $senha | sudo -S pacman -S nemo nemo-preview nemo-share nemo-fileroller --noconfirm
-sleep 2s
-clear
+    echo -e "$seta ${blue}Instalando o deepin-extra${end}"
+    echo $senha | sudo -S pacman -S deepin-extra --noconfirm
+    sleep 2s
+    clear
+}
+
+cinnamon(){
+    echo -e "$seta ${blue}Instalando o cinnamon desktop${end}"
+    echo $senha | sudo -S pacman -S cinnamon cinnamon-translations cinnamon-screensaver cinnamon-session cinnamon-settings-daemon --noconfirm
+    sleep 2s
+    clear
+}
+
+### Gerenciadores de login
+lightdm(){
+    echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
+    sleep 2s
+    echo $senha | sudo -S pacman -S lightdm --noconfirm
+    yay -S lightdm-settings lightdm-gtk-greeter
+    yay -S lightdm-settings lightdm-gtk-greeter-settings
+    echo $senha | sudo -S systemctl enable lightdm.service
+    echo $senha | sudo -S systemctl start lightdm.service
+    clear
+}
+
+gdm(){
+    echo -e "$seta ${blue}Instalando e iniciando o gdm${end}"
+    sleep 2s
+    echo $senha | sudo -S pacman -S gdm --noconfirm
+    echo $senha | sudo -S systemctl enable gdm
+    echo $senha | sudo -S systemctl start gdm
+    clear
+}
+
+### Gerenciadores de arquivos
+nemo(){
+    echo -e "$seta ${blue}Instalando o nemo${end}"
+    echo $senha | sudo -S pacman -S nemo nemo-preview nemo-share nemo-fileroller --noconfirm
+    sleep 2s
+    clear
+}
+
+#-----------------------------------------------------------------------------------------------------------------------
 
 echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
 echo $senha | sudo -S pacman -S p7zip unrar unzip zip bzip2 --noconfirm
@@ -45,9 +86,18 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools nemo-python neofetch neofetch rsync system-config-printer system-config-printer tcpdump ttf-hack ufw virtualbox virtualbox-guest-utils xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader xterm youtube-dl --noconfirm
+echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch bolt gst-libav xdg-utils xdg-user-dirs archlinux-wallpaper system-config-printer dialog youtube-dl xf86-input-synaptics gimp libreoffice libreoffice-fresh-pt-br virtualbox virtualbox-guest-utils bash-completion bluez bluez-cups bluez-tools alsa-utils blueberry  gnome-bluetooth gnome-calculator gnome-calendar archlinux-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnupg gufw ufw accountsservice xreader gnome-disk-utility xfce4-terminal xterm rsync tcpdump colord coreutils cpio ttf-hack neofetch cmatrix system-config-printer gnome-keyring gnome-system-monitor baobab htop lollypop nemo-python ffmpegthumbnailer --noconfirm
 sleep 2s
 clear
+
+echo -en "${seta}${blue}Escolha seu ambiente gráfico:[s/n]:${end}"
+read resposta
+
+case $resposta in
+    cinnamon) cinnamon ;;
+    deepin) deepin   ;;
+    gnome) gnome    ;;
+esac
 
 echo -e "$seta ${blue}Instalando o yay${end}"
 git clone https://aur.archlinux.org/yay.git
@@ -118,8 +168,8 @@ clear
 # Section "InputClass"
 # Identifier "keyboard default"
 # MatchIsKeyboard "yes"
-# Option "XkbLayout" "br"
-# Option "XkbVariant" "abnt2"
+# Option  "XkbLayout" "br"
+# Option  "XkbVariant" "abnt2"
 # EndSection
 # EOF
 # echo -e "${seta} ${yellow}Aperte enter para continuar${end}"
@@ -147,13 +197,4 @@ fi
 # sleep 2s
 # clear
 
-echo -e "$seta ${blue}Instalando e iniciando o gdm${end}"
-sleep 2s
-echo $senha | sudo -S pacman -S gdm --noconfirm
-echo $senha | sudo -S systemctl enable gdm
-echo $senha | sudo -S systemctl start gdm
-echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
-read
-sleep 2s
-clear
 
