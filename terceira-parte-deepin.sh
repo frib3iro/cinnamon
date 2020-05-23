@@ -37,7 +37,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
-echo $senha | sudo -S pacman -S p7zip unrar unzip zip bzip2 --noconfirm
+echo $senha | sudo -S pacman -S unrar --noconfirm
 echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
 read
 echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
