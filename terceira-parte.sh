@@ -22,7 +22,7 @@ clear
 
 # Drivers de video
 echo -e "$seta ${blue}Instalando os drivers de vídeo${end}"
-echo $senha | sudo -S pacman -S xf86-video-intel intel-ucode --noconfirm
+echo $senha | sudo -S pacman -S nvidia nvidia-utils intel-ucode --noconfirm
 sleep 2s
 clear
 
