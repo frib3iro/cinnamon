@@ -150,7 +150,7 @@ sleep 2s
 echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-slick-greeter${end} ${blue}ao arquivo${end}"
 sleep 2s
 echo $senha | sudo -S vim /etc/lightdm/lightdm.conf
-ghtdm --test-mode --debug
+lightdm --test-mode --debug
 echo $senha | sudo -S systemctl enable lightdm -f
 sleep 2s
 clear
