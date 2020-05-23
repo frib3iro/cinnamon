@@ -31,14 +31,9 @@ echo $senha | sudo -S pacman -S deepin deepin-extra --noconfirm
 sleep 2s
 clear
 
-echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
-echo $senha | sudo -S pacman -S unrar --noconfirm
-clear
-
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio dialog ffmpegthumbnailer gimp gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack ufw xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader youtube-dl --noconfirm
-echo -e "$seta ${yellow}Aperte enter para continuar${end}"
-read
+echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio dialog ffmpegthumbnailer gimp gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader youtube-dl --noconfirm
+sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
@@ -48,27 +43,6 @@ makepkg -si PKGBUILD --noconfirm
 sleep 2s
 clear
 
-# echo -e "$seta ${blue}Instalando spotify${end}"
-# yay -S spotify --noconfirm
-# sleep 2s
-# clear
-# 
-# echo -e "$seta ${blue}Instalando o xviewer${end}"
-# yay -S xviewer xviewer-plugins --noconfirm
-# sleep 2s
-# clear
-# 
-# echo -e "$seta ${blue}Instalando as fontes${end}"
-# yay -S ttf-ms-fonts --noconfirm
-# yay -S ttf-ubuntu-font-family --noconfirm
-# sleep 2s
-# clear
-# 
-# echo -e "$seta ${blue}Instalando o timeshift${end}"
-# yay -S timeshift --noconfirm
-# sleep 2s
-# clear
- 
 echo -e "$seta ${blue}Instalando o google-chrome${end}"
 yay -S google-chrome --noconfirm
 sleep 2s
@@ -87,19 +61,22 @@ else
     continue 
 fi
 
-echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
+echo -e "$seta ${red}Saia e salve o arquivo!${end}"
+read
+
+echo -e "$seta ${blue}Instalando o lightdm${end}"
 sleep 2s
 echo $senha | sudo -S pacman -S lightdm --noconfirm
 
 echo -e "$seta ${blue}Instalando o lightdm-slick-greeter${end}"
 yay -S lightdm-settings --noconfirm
-yay -S lightdm-slick-greeter --noconfirm
+yay -S lightdm-deepin-greeter --noconfirm
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Edite o arquivo de configuração do lightdm${end}"
 sleep 3s
-echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-slick-greeter${end} ${blue}ao arquivo${end}"
+echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-deepin-greeter${end} ${blue}ao arquivo${end}"
 sleep 3s
 echo $senha | sudo -S vim /etc/lightdm/lightdm.conf
 
