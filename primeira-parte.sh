@@ -78,9 +78,9 @@ sleep 2s
 echo -en "${seta} ${blue}Digite${end} ${red}1${end} ${blue}para maquina virtual e${end} ${red}2${end} ${blue}para maquina real:${end} "
 read resposta
 
-while [ $resposta -ne 1 -o 2 ]; do
+while [ $resposta -ne 1 -o -ne 2 ]; do
     echo -e "${seta} ${red}Digite apenas 1 ou 2!${end}\n"
-    echo -e "${seta} ${red}Qual sua resposta:${end} "
+    echo -en "${seta} ${blue}Qual sua resposta:${end} "
     read resposta
 done
 
