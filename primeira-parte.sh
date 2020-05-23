@@ -75,10 +75,10 @@ clear
 echo -e "${seta} ${blue}Iniciando particionamento${end}"
 sleep 2s
 
-echo -en "${seta} ${blue}Digite ${red}1${end} para maquina virtual e ${red}2${end} para maquina real:${end} "
+echo -en "${seta} ${blue}Digite${end} ${red}1${end} ${blue}para maquina virtual e${end} ${red}2${end} ${blue}para maquina real:${end} "
 read resposta
 
-until [  $resposta -ne 1 -o 2 ]; do
+while [  $resposta -ne 1 -o 2 ]; do
     echo -e "${seta} ${red}Digite apenas 1 ou 2!${end}"
     read resposta
 done
