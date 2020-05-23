@@ -75,6 +75,12 @@ nemo(){
     clear
 }
 
+nautilus(){
+    echo -e "$seta ${blue}Instalando o nautilus${end}"
+    echo $senha | sudo -S pacman -S nautilus --noconfirm
+    sleep 2s
+    clear
+}
 #-----------------------------------------------------------------------------------------------------------------------
 
 echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
@@ -90,13 +96,14 @@ echo $senha | sudo -S pacman -S xorg man-db metacity mtools neofetch bolt gst-li
 sleep 2s
 clear
 
-echo -en "${seta}${blue}Escolha seu ambiente gráfico:[s/n]:${end}"
+echo -en "${seta}${blue}Escolha seu ambiente gráfico${end}"
+
 read resposta
 
 case $resposta in
-    cinnamon) cinnamon ;;
-    deepin) deepin   ;;
-    gnome) gnome    ;;
+    1) cinnamon ;;
+    2) deepin   ;;
+    3) gnome    ;;
 esac
 
 echo -e "$seta ${blue}Instalando o yay${end}"
