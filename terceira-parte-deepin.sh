@@ -90,10 +90,6 @@ fi
 echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
 sleep 2s
 echo $senha | sudo -S pacman -S lightdm --noconfirm
-echo -e "$seta ${blue}dite o arquivo de configuração do lightdm${end}"
-echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-slick-greeter${end} ${blue}ao arquivo${end}"
-echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
-read
 
 echo -e "$seta ${blue}Instalando o lightdm-slick-greeter${end}"
 yay -S lightdm-settings --noconfirm
@@ -101,10 +97,28 @@ yay -S lightdm-slick-greeter --noconfirm
 sleep 2s
 clear
 
+echo -e "$seta ${blue}Edite o arquivo de configuração do lightdm${end}"
+sleep 3s
+echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-slick-greeter${end} ${blue}ao arquivo${end}"
+sleep 3s
+echo $senha | sudo -S vim /etc/lightdm/lightdm.conf
+
+echo -e "$seta ${yellow}Iniciando o debug do lightdm${end}"
+if lightdm --test-mode --debug; then
+    echo -e "$seta ${yellow}O debug do lightdm foi um sucesso!${end}"
+    sleep 3s
+    clear
+else
+    echo -e "$seta ${yellow}O debug do lightdm falhou!${end}"
+    sleep 3s
+    exit 1
+fi
+
 echo -e "$seta ${blue}Habilitando o lightdm${end}"
-lightdm --test-mode --debug
-echo $senha | sudo -S systemctl enable lightdm 
-echo $senha | sudo -S systemctl start lightdm 
-sleep 2s
+sleep 3s
+echo $senha | sudo -S systemctl enable lightdm.service
+echo -e "$seta ${yellow}iniciando o lightdm${end}"
+sleep 3s
+echo $senha | sudo -S systemctl start lightdm.service
 clear
 
