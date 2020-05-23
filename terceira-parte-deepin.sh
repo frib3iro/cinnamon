@@ -36,7 +36,7 @@ echo $senha | sudo -S pacman -S unrar --noconfirm
 clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack ufw virtualbox virtualbox-guest-utils xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader youtube-dl --noconfirm
+echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio dialog ffmpegthumbnailer gimp gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack ufw xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader youtube-dl --noconfirm
 echo -e "$seta ${yellow}Aperte enter para continuar${end}"
 read
 clear
@@ -48,27 +48,27 @@ makepkg -si PKGBUILD --noconfirm
 sleep 2s
 clear
 
-echo -e "$seta ${blue}Instalando spotify${end}"
-yay -S spotify --noconfirm
-sleep 2s
-clear
-
-echo -e "$seta ${blue}Instalando o xviewer${end}"
-yay -S xviewer xviewer-plugins --noconfirm
-sleep 2s
-clear
-
-echo -e "$seta ${blue}Instalando as fontes${end}"
-yay -S ttf-ms-fonts --noconfirm
-yay -S ttf-ubuntu-font-family --noconfirm
-sleep 2s
-clear
-
-echo -e "$seta ${blue}Instalando o timeshift${end}"
-yay -S timeshift --noconfirm
-sleep 2s
-clear
-
+# echo -e "$seta ${blue}Instalando spotify${end}"
+# yay -S spotify --noconfirm
+# sleep 2s
+# clear
+# 
+# echo -e "$seta ${blue}Instalando o xviewer${end}"
+# yay -S xviewer xviewer-plugins --noconfirm
+# sleep 2s
+# clear
+# 
+# echo -e "$seta ${blue}Instalando as fontes${end}"
+# yay -S ttf-ms-fonts --noconfirm
+# yay -S ttf-ubuntu-font-family --noconfirm
+# sleep 2s
+# clear
+# 
+# echo -e "$seta ${blue}Instalando o timeshift${end}"
+# yay -S timeshift --noconfirm
+# sleep 2s
+# clear
+ 
 echo -e "$seta ${blue}Instalando o google-chrome${end}"
 yay -S google-chrome --noconfirm
 sleep 2s
@@ -89,27 +89,22 @@ fi
 
 echo -e "$seta ${blue}Instalando e iniciando o lightdm${end}"
 sleep 2s
-echo $senha | sudo -S pacman -Syyu lightdm --noconfirm
-git clone https://aur.archlinux.org/lightdm-slick-greeter.git
-cd lightdm-slick-greeter
-makepkg -sri
-echo -e "$seta ${blue}Edite o arquivo de configuração do lightdm${end}"
-sleep 2s
+echo $senha | sudo -S pacman -S lightdm --noconfirm
+echo -e "$seta ${blue}dite o arquivo de configuração do lightdm${end}"
 echo -e "$seta ${blue}Adicione${end} ${yellow}greeter-session=lightdm-slick-greeter${end} ${blue}ao arquivo${end}"
-sleep 2s
-echo $senha | sudo -S vim /etc/lightdm/lightdm.conf
-lightdm --test-mode --debug
-echo $senha | sudo -S systemctl enable lightdm -f
+echo -e "$seta ${yellow}Aperte uma tecla para continuar${end}"
+read
+
+echo -e "$seta ${blue}Instalando o lightdm-slick-greeter${end}"
+yay -S lightdm-settings --noconfirm
+yay -S lightdm-slick-greeter --noconfirm
 sleep 2s
 clear
 
-# echo -e "$seta ${blue}Instalando e iniciando o gdm${end}"
-# sleep 2s
-# echo $senha | sudo -S pacman -S gdm --noconfirm
-# echo $senha | sudo -S systemctl enable gdm
-# echo $senha | sudo -S systemctl start gdm
-# echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
-# read
-# sleep 2s
-# clear
+echo -e "$seta ${blue}Habilitando o lightdm${end}"
+lightdm --test-mode --debug
+echo $senha | sudo -S systemctl enable lightdm 
+echo $senha | sudo -S systemctl start lightdm 
+sleep 2s
+clear
 
