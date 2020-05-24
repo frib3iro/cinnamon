@@ -49,6 +49,27 @@ echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring arc
 sleep 2s
 clear
 
+echo -e "${seta} ${blue}Instalando os pacotes necessários${end}"
+echo $senha | sudo -S pacman -S qemu virt-manager libvirt dnsmask ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
+sleep 2s
+clear
+
+echo -e "${seta} ${blue}Iniciando o daemon libvirt${end}"
+echo $senha | sudo -S systemctl enable libvirtd.service --noconfirm
+echo $senha | sudo -S systemctl start libvirtd.service --noconfirm
+sleep 2s
+clear
+
+echo -e "${seta} ${blue}Inserindo $USER no grupo libvirt${end}"
+usermod -aG libvirt $USER
+sleep 2s
+clear
+
+echo -e "${seta} ${blue}Para que o suporte de rede seja iniciado automáticamente${end}"
+echo $senha | sudo -S virsh net-autostart -- network default
+sleep 2s
+clear
+
 echo -e "$seta ${blue}Instalando o yay${end}"
 git clone https://aur.archlinux.org/yay.git
 cd yay/
