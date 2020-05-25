@@ -129,9 +129,9 @@ sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Definindo o layout do teclado no ambiente         cinnamon${end}"
+echo -e "${seta} ${blue}Definindo o layout do teclado no ambiente cinnamon${end}"
 sleep 2s
-echo $senha | sudo -S cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' <<   EOF
+cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' <<   EOF
 Section "InputClass"
     Identifier "keyboard default"
     MatchIsKeyboard "yes"
