@@ -42,7 +42,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando os pacotes necessários${end}"
-echo $senha | sudo -S pacman -S qemu virt-manager libvirt ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
+echo $senha | sudo -S pacman -S qemu virt-manager dnsmasq libvirt ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
 sleep 2s
 clear
 
