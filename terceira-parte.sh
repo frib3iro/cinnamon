@@ -47,13 +47,13 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Iniciando o daemon libvirt${end}"
-echo $senha | sudo -S systemctl enable libvirtd.service --noconfirm
-echo $senha | sudo -S systemctl start libvirtd.service --noconfirm
+echo $senha | sudo -S systemctl enable libvirtd.service
+echo $senha | sudo -S systemctl start libvirtd.service
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Inserindo $USER no grupo libvirt${end}"
-usermod -aG libvirt $USER
+echo $senha | sudo -S usermod -aG libvirt $USER
 sleep 2s
 clear
 
@@ -147,8 +147,5 @@ sleep 2s
 echo $senha | sudo -S pacman -S gdm --noconfirm
 echo $senha | sudo -S systemctl enable gdm
 echo $senha | sudo -S systemctl start gdm
-echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
-read
-sleep 2s
 clear
 
