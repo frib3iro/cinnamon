@@ -37,7 +37,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics gnome-terminal xorg xreader xterm youtube-dl --noconfirm
+echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics gnome-terminal xorg xreader youtube-dl --noconfirm
 sleep 2s
 clear
 
@@ -47,13 +47,13 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Iniciando o daemon libvirt${end}"
-echo $senha | sudo -S systemctl enable libvirtd.service --noconfirm
-echo $senha | sudo -S systemctl start libvirtd.service --noconfirm
+echo $senha | sudo -S systemctl enable libvirtd.service
+echo $senha | sudo -S systemctl start libvirtd.service
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Inserindo $USER no grupo libvirt${end}"
-usermod -aG libvirt $USER
+echo $senha | sudo -S usermod -aG libvirt $USER
 sleep 2s
 clear
 
@@ -70,7 +70,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando gnome-terminal-transparency${end}"
-yay -S gnome-terminal-transparency --noconfirm
+yay -S gnome-terminal-transparency
 sleep 2s
 clear
 
@@ -96,12 +96,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o mint-themes${end}"
-yay -S mint-themes mmint-x-icons int-y-icons mint-backgrounds mintlocale --noconfirm
-sleep 2s
-clear
-
-echo -e "$seta ${blue}Instalando o timeshift${end}"
-yay -S timeshift --noconfirm
+yay -S mint-themes mint-x-icons mint-y-icons mint-backgrounds mintlocale --noconfirm
 sleep 2s
 clear
 
@@ -147,8 +142,4 @@ sleep 2s
 echo $senha | sudo -S pacman -S gdm --noconfirm
 echo $senha | sudo -S systemctl enable gdm
 echo $senha | sudo -S systemctl start gdm
-echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
-read
-sleep 2s
-clear
 
