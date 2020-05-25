@@ -96,7 +96,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o mint-themes${end}"
-yay -S --noconfirm mint-themes mint-x-icons mint-y-icons mint-backgrounds mintlocale
+yay -S --noconfirm mint-themes mint-y-icons mintlocale
 sleep 2s
 clear
 
