@@ -64,8 +64,8 @@ clear
 
 echo -e "$seta ${blue}Instalando o yay${end}"
 git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -si PKGBUILD --noconfirm
+cd yay
+makepkg -si --noconfirm
 sleep 2s
 clear
 
@@ -75,38 +75,38 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando cinnamon-sound-effects${end}"
-yay -S cinnamon-sound-effects --noconfirm
+yay -S --noconfirm cinnamon-sound-effects
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando spotify${end}"
-yay -S spotify --noconfirm
+yay -S --noconfirm spotify
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o xviewer${end}"
-yay -S xviewer xviewer-plugins --noconfirm
+yay -S --noconfirm xviewer xviewer-plugins
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando as fontes${end}"
-yay -S ttf-ms-fonts --noconfirm
-yay -S ttf-ubuntu-font-family --noconfirm
+yay -S --noconfirm ttf-ms-fonts
+yay -S --noconfirm ttf-ubuntu-font-family
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o mint-themes${end}"
-yay -S mint-themes mint-x-icons mint-y-icons mint-backgrounds mintlocale --noconfirm
+yay -S --noconfirm mint-themes mint-x-icons mint-y-icons mint-backgrounds mintlocale
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o gnome-online-accounts-git${end}"
-yay -S gnome-online-accounts-git --noconfirm
+yay -S --noconfirm gnome-online-accounts-git
 sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o google-chrome${end}"
-yay -S google-chrome --noconfirm
+yay -S --noconfirm google-chrome
 sleep 2s
 clear
 
@@ -114,10 +114,10 @@ clear
 # sleep 2s
 # echo $senha | sudo -S cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' << EOF
 # Section "InputClass"
-#       Identifier "keyboard default"
-#       MatchIsKeyboard "yes"
-#       Option "XkbLayout" "br"
-#       Option "XkbVariant" "abnt2"
+# Identifier "keyboard default"
+# MatchIsKeyboard "yes"
+# Option "XkbLayout" "br"
+# Option "XkbVariant" "abnt2"
 # EndSection
 # EOF
 # echo -e "${seta} ${yellow}Aperte enter para continuar${end}"
