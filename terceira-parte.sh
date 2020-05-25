@@ -16,7 +16,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Atualizando os repositórios${end}"
-echo $senha | sudo -S pacman -Syyu
+echo $senha | sudo -S pacman -Syu --noconfirm
 sleep 2s
 clear
 
@@ -37,7 +37,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gedit gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump totem ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics gnome-terminal xcursor-vanilla-dmz-aa xorg xreader youtube-dl --noconfirm
+echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gedit gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump totem ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics gnome-terminal xcursor-vanilla-dmz-aa xreader youtube-dl --noconfirm
 sleep 2s
 clear
 
@@ -109,20 +109,6 @@ echo -e "$seta ${blue}Instalando o google-chrome${end}"
 yay -S --noconfirm google-chrome
 sleep 2s
 clear
-
-# echo -e "${seta} ${blue}Definindo o layout do teclado no ambiente cinnamon${end}"
-# sleep 2s
-# echo $senha | sudo -S cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' << EOF
-# Section "InputClass"
-# Identifier "keyboard default"
-# MatchIsKeyboard "yes"
-# Option "XkbLayout" "br"
-# Option "XkbVariant" "abnt2"
-# EndSection
-# EOF
-# echo -e "${seta} ${yellow}Aperte enter para continuar${end}"
-# read
-# clear
 
 echo -e "$seta ${blue}Iniciando o xdg-update${end}"
 sleep 2s

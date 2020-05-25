@@ -129,7 +129,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Atualizando os repositórios${end}"
-pacman -Syu
+pacman -Syu --noconfirm
 sleep 2s
 clear
 

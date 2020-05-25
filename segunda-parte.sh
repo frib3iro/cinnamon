@@ -91,7 +91,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Baixando o Gerenciador de boot e mais alguns pacotes${end}"
-pacman -S dosfstools efibootmgr git grub linux-headers networkmanager network-manager-applet vim wget --noconfirm
+pacman -S dosfstools efibootmgr git grub linux-headers networkmanager network-manager-applet vim wget xorg --noconfirm
 sleep 2s
 clear
 
