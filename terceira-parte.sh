@@ -36,21 +36,13 @@ echo $senha | sudo -S pacman -S nemo nemo-preview nemo-share nemo-fileroller --n
 sleep 2s
 clear
 
-echo -e "$seta ${blue}Instalando compactadores de arquivos${end}"
-echo $senha | sudo -S pacman -S unrar --noconfirm
-sleep 2s
-echo -e "$seta ${yellow}Aperdte enter para continuar...${end}"
-read
-sleep 2s
-clear
-
 echo -e "$seta ${blue}Instalando pacotes necessários${end}"
-echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics xfce4-terminal xorg xreader xterm youtube-dl --noconfirm
+echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch rsync system-config-printer tcpdump ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics gnome-terminal xorg xreader xterm youtube-dl --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando os pacotes necessários${end}"
-echo $senha | sudo -S pacman -S qemu virt-manager libvirt dnsmask ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
+echo $senha | sudo -S pacman -S qemu virt-manager libvirt ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
 sleep 2s
 clear
 
@@ -66,7 +58,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Para que o suporte de rede seja iniciado automáticamente${end}"
-echo $senha | sudo -S virsh net-autostart -- network default
+echo $senha | sudo -S virsh net-autostart --network default
 sleep 2s
 clear
 
@@ -77,10 +69,10 @@ makepkg -si PKGBUILD --noconfirm
 sleep 2s
 clear
 
-# echo -e "$seta ${blue}Instalando gnome-terminal-transparency${end}"
-# yay -Ss gnome-terminal-transparency --noconfirm
-# sleep 2s
-# clear
+echo -e "$seta ${blue}Instalando gnome-terminal-transparency${end}"
+yay -S gnome-terminal-transparency --noconfirm
+sleep 2s
+clear
 
 echo -e "$seta ${blue}Instalando cinnamon-sound-effects${end}"
 yay -S cinnamon-sound-effects --noconfirm
@@ -104,7 +96,7 @@ sleep 2s
 clear
 
 echo -e "$seta ${blue}Instalando o mint-themes${end}"
-yay -S mint-themes mint-y-icons mint-backgrounds mintlocale --noconfirm
+yay -S mint-themes mmint-x-icons int-y-icons mint-backgrounds mintlocale --noconfirm
 sleep 2s
 clear
 
