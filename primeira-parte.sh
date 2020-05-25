@@ -23,7 +23,6 @@ virtual(){
 real(){
     (echo d; echo ""; echo d; echo ""; echo g; echo n; echo ""; echo ""; echo +512MB; echo t; echo 1; echo n; echo ""; echo ""; echo ""; echo w) | fdisk ${disco}
 }
-# Funções ---------------------------------------------
 
 # Tela de boas vindas
 clear
@@ -130,7 +129,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Atualizando os repositórios${end}"
-pacman -Syyy
+pacman -Syu
 sleep 2s
 clear
 
