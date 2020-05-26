@@ -73,24 +73,22 @@ clear
 # Iniciando particionamento
 echo -e "${seta} ${blue}Iniciando particionamento${end}"
 sleep 2s
+clear
 
 echo -en "${seta} ${blue}Digite${end} ${red}1${end} ${blue}para maquina virtual e${end} ${red}2${end} ${blue}para maquina real:${end} "
 read resposta
-
-# while $resposta -ne 1 -o 2; do
-    # echo -e "${seta} ${red}Digite apenas 1 ou 2!${end}\n"
-    # echo -en "${seta} ${blue}Qual sua resposta:${end} "
-    # read resposta
-# done
+clear
 
 if [ "$resposta" -eq 1 ]; then
     virtual
     echo -e "${seta} ${blue}Iniciando particionamento na máquina virtual${end}"
     sleep 2s
+    clear
 elif [ "$resposta" -eq 2 ]; then
     real
     echo -e "${seta} ${blue}Iniciando particionamento na máquina real${end}"
     sleep 2s
+    clear
 fi
 
 # Formatando partições
