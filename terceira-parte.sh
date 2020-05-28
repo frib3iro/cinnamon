@@ -69,6 +69,11 @@ makepkg -si --noconfirm
 sleep 2s
 clear
 
+echo -e "$seta ${blue}Instalando o kid3-cli para o lollypop${end}"
+yay -S --noconfirm kid3-cli
+sleep 2s
+clear
+
 echo -e "$seta ${blue}Instalando os${end} ${yellow}firmwares warnigs${end} ${blue}do archlinux${end}"
 yay -S --noconfirm aic94xx-firmware wd719x-firmware
 sleep 2s
