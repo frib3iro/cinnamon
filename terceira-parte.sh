@@ -69,6 +69,18 @@ makepkg -si --noconfirm
 sleep 2s
 clear
 
+# Hackerman -------------------------------------------------------
+echo -e "$seta ${blue}Instalando aircrack-ng e usbutils${end}"
+echo $senha | sudo -S pacman -S aircrack-ng usbutils --noconfirm
+sleep 2s
+clear
+
+echo -e "$seta ${blue}Instalando o crunch${end}"
+yay -S --noconfirm crunch
+sleep 2s
+clear
+# Hackerman -------------------------------------------------------
+
 echo -e "$seta ${blue}Instalando o kid3-cli para o lollypop${end}"
 yay -S --noconfirm kid3-cli
 sleep 2s
