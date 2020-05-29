@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#----------------------------------------------------------------------
+# Script    : config
+# Descrição :
+# Versão    : 0.1
+# Autor     : Fabio Junior Ribeiro <rib3iro@live.com>
+# Data      : 28/05/2020
+# Licença   : GNU/GPL v3.0
+#----------------------------------------------------------------------
+# Uso       :
+#----------------------------------------------------------------------
+
+echo "# deepin" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/frib3iro/deepin.git
+git push -u origin master
