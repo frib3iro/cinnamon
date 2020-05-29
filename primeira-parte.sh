@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-# Para ver somente os comandos da instalação digite o comando abaixo
-# 'grep -i '#' install.txt'
-
 # variaveis
-senha=cp1113bug6u
+pass_user='cp1113bug6u'
 mirror='/etc/pacman.d/mirrorlist'
 blue='\e[34;1m'
 green='\e[32;1m'
@@ -31,27 +28,8 @@ sleep 2s
 clear
 
 # Definindo layout do teclado
-echo -e "${seta} ${blue}Definir o layout do teclado${end}"
+echo -e "${seta} ${blue}Definindo o layout do teclado${end}"
 loadkeys br-abnt2
-sleep 2s
-clear
-
-# Definir o idioma do ambiente live
-echo -e "${seta} ${blue}Definir o idioma do ambiente live${end}"
-sed -i 's/en_US ISO-8859-1/#en_US ISO-8859-1/' /etc/locale.gen
-sed -i 's/en_US.UTF-8/#en_US.UTF-8/' /etc/locale.gen
-sed -i 's/#pt_BR.UTF-8/pt_BR.UTF-8/' /etc/locale.gen
-sed -i 's/#pt_BR ISO-8859-1/pt_BR ISO-8859-1/' /etc/locale.gen
-sleep 2s
-clear
-
-echo -e "${seta} ${blue}Gerando locale-gen${end}"
-locale-gen
-sleep 2s
-clear
-
-echo -e "${seta} ${blue}Exportando a variável LANG${end}"
-export LANG=pt_BR.UTF-8
 sleep 2s
 clear
 
@@ -75,7 +53,7 @@ echo -e "${seta} ${blue}Iniciando particionamento${end}"
 sleep 2s
 clear
 
-echo -en "${seta} ${blue}Digite${end} ${red}1${end} ${blue}para maquina virtual e${end} ${red}2${end} ${blue}para maquina real:${end} "
+echo -en "${seta} ${blue}Digite${end} ${red}[ 1 ]${end} ${blue}para maquina virtual e${end} ${red}[ 2 ]${end} ${blue}para maquina real:${end} "
 read resposta
 clear
 
@@ -101,8 +79,8 @@ clear
 # Montando partições
 echo -e "${seta} ${blue}Montando as partições${end}"
 mount ${disco}2 /mnt
-mkdir -p /mnt/boot/EFI
-mount ${disco}1 /mnt/boot/EFI
+mkdir -p /mnt/boot
+mount ${disco}1 /mnt/boot
 sleep 2s
 clear
 
@@ -127,11 +105,11 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Atualizando os repositórios${end}"
-pacman -Syu --noconfirm
+pacman -Syyy --noconfirm
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Instalar os pacotes base${end}"
+echo -e "${seta} ${blue}Instalando os pacotes base${end}"
 pacstrap /mnt base base-devel linux linux-firmware
 sleep 2s
 clear

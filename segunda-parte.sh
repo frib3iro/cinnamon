@@ -30,13 +30,13 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Executando hwclock${end}"
+echo -e "${seta} ${blue}Executando o hwclock${end}"
 hwclock --systohc --utc
 sleep 2s
 clear
 
 # Editando locale.gen
-echo -e "${seta} ${blue}Definir o idioma do ambiente live${end}"
+echo -e "${seta} ${blue}Definindo o idioma${end}"
 sed -i 's/en_US ISO-8859-1/#en_US ISO-8859-1/' /etc/locale.gen
 sed -i 's/en_US.UTF-8/#en_US.UTF-8/' /etc/locale.gen
 sed -i 's/#pt_BR.UTF-8/pt_BR.UTF-8/' /etc/locale.gen
@@ -44,12 +44,12 @@ sed -i 's/#pt_BR ISO-8859-1/pt_BR ISO-8859-1/' /etc/locale.gen
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Gerando locale-gen${end}"
+echo -e "${seta} ${blue}Gerando o locale-gen${end}"
 locale-gen
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Criando arquivo locale.conf${end}"
+echo -e "${seta} ${blue}Criando o arquivo locale.conf${end}"
 echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 sleep 2s
 clear
@@ -96,7 +96,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o GRUB${end}"
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 sleep 2s
 clear
 
@@ -105,26 +105,26 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Iniciando NetworkManager${end}"
+echo -e "${seta} ${blue}Iniciando o NetworkManager${end}"
 systemctl enable NetworkManager
 systemctl start NetworkManager
 sleep 2s
 clear
 
 # Adicionando um usuario
-echo -e "${seta} ${blue}Adicionando um usuário${end}"
+echo -e "${seta} ${blue}Adicionando o usuário${end}"
 useradd -m -g users -G wheel fabio
 sleep 2s
 clear
 
 # Criando senha de usuario
-echo -e "${seta} ${blue}Adicionando uma senha para o usuário${end}"
+echo -e "${seta} ${blue}Adicionando a senha do usuário${end}"
 echo "$user:$pass_user" | chpasswd 
 sleep 2s
 clear
 
 # Adicionando user no grupo sudoers
-echo -e "${seta} ${blue}Adicionando $user no grupo sudoers${end}"
+echo -e "${seta} ${blue}Adicionando o usuário no grupo sudoers${end}"
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sleep 2s
 clear
