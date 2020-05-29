@@ -96,7 +96,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o GRUB${end}"
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
 sleep 2s
 clear
 
@@ -127,20 +127,6 @@ clear
 echo -e "${seta} ${blue}Adicionando $user no grupo sudoers${end}"
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sleep 2s
-clear
-
-echo -e "${seta} ${blue}Definindo o layout do teclado no ambiente cinnamon${end}"
-sleep 2s
-cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' <<   EOF
-Section "InputClass"
-    Identifier "keyboard default"
-    MatchIsKeyboard "yes"
-    Option "XkbLayout" "br"
-    Option "XkbVariant" "abnt2"
-EndSection
-EOF
-echo -e "${seta} ${yellow}Aperte enter para continuar${end}"
-read
 clear
 
 echo -e "${seta} ${blue}Reinicie o sistema para continuar com a terceira parte!${end}"
