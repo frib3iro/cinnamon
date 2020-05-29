@@ -4,7 +4,7 @@
 # 'grep -i '#' install.txt'
 
 # variaveis
-senha=cp1113bug6u
+senha='cp1113bug6u'
 mirror='/etc/pacman.d/mirrorlist'
 blue='\e[34;1m'
 green='\e[32;1m'
