@@ -96,7 +96,7 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o GRUB${end}"
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 sleep 2s
 clear
 

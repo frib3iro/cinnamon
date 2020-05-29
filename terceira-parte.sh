@@ -41,7 +41,7 @@ echo $senha | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring arc
 sleep 2s
 clear
 
-echo -e "${seta} ${blue}Instalando os pacotes necessários${end}"
+echo -e "${seta} ${blue}Instalando o virt-manager e pacotes necessários${end}"
 echo $senha | sudo -S pacman -S qemu virt-manager dnsmasq libvirt ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
 sleep 2s
 clear

@@ -36,25 +36,6 @@ loadkeys br-abnt2
 sleep 2s
 clear
 
-# Definir o idioma do ambiente live
-echo -e "${seta} ${blue}Definir o idioma do ambiente live${end}"
-sed -i 's/en_US ISO-8859-1/#en_US ISO-8859-1/' /etc/locale.gen
-sed -i 's/en_US.UTF-8/#en_US.UTF-8/' /etc/locale.gen
-sed -i 's/#pt_BR.UTF-8/pt_BR.UTF-8/' /etc/locale.gen
-sed -i 's/#pt_BR ISO-8859-1/pt_BR ISO-8859-1/' /etc/locale.gen
-sleep 2s
-clear
-
-echo -e "${seta} ${blue}Gerando locale-gen${end}"
-locale-gen
-sleep 2s
-clear
-
-echo -e "${seta} ${blue}Exportando a variável LANG${end}"
-export LANG=pt_BR.UTF-8
-sleep 2s
-clear
-
 echo -e "${seta} ${blue}Atualizando o relógio do sistema${end}"
 timedatectl set-ntp true
 sleep 2s
@@ -70,12 +51,7 @@ read disco
 disco=/dev/${disco}
 clear
 
-# Iniciando particionamento
-echo -e "${seta} ${blue}Iniciando particionamento${end}"
-sleep 2s
-clear
-
-echo -en "${seta} ${blue}Digite${end} ${red}1${end} ${blue}para maquina virtual e${end} ${red}2${end} ${blue}para maquina real:${end} "
+echo -en "${seta} ${blue}Digite${end} ${red}[ 1 ]${end} ${blue}para maquina virtual e${end} ${red}[ 2 ]${end} ${blue}para maquina real:${end} "
 read resposta
 clear
 
@@ -101,8 +77,8 @@ clear
 # Montando partições
 echo -e "${seta} ${blue}Montando as partições${end}"
 mount ${disco}2 /mnt
-mkdir -p /mnt/boot/EFI
-mount ${disco}1 /mnt/boot/EFI
+mkdir -p /mnt/boot
+mount ${disco}1 /mnt/boot
 sleep 2s
 clear
 
