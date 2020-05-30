@@ -79,8 +79,8 @@ clear
 # Montando partições
 echo -e "${seta} ${blue}Montando as partições${end}"
 mount ${disco}2 /mnt
-mkdir -p /mnt/boot
-mount ${disco}1 /mnt/boot
+mkdir -p /mnt/boot/UEFI
+mount ${disco}1 /mnt/boot/UEFI
 sleep 2s
 clear
 

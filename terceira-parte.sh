@@ -26,29 +26,6 @@ iniciar_gdm(){
     echo $pass_user | sudo -S systemctl start gdm
 }
 
-# Lightdm ------------------------------------------------------------
-instalar_lightdm(){
-    echo $pass_user | sudo -S pacman -S lightdm --noconfirm
-}
-
-unity_greeter(){
-    yay -S lightdm-unity-greeter --noconfirm
-}
-
-gtk_greeter_settings(){
-    echo $pass_user | sudo -S pacman -S lightdm-gtk-greeter-settings --noconfirm
-}
-
-configurar_lightdm(){
-    sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/' /etc/lightdm/lightdm.conf
-}
-
-iniciar_lightdm(){
-     echo $pass_user | sudo -S systemctl enable lightdm.service
-     echo $pass_user | sudo -S systemctl start lightdm.service
-}
-# -------------------------------------------------------------------
-
 # Tela de boas vindas
 clear
 echo -e "${seta} ${blue}Bem vindo a terceira parte da instalação!${end}"
@@ -133,10 +110,11 @@ echo -e "${seta} ${blue}Instalando o crunch${end}"
 yay -S --noconfirm crunch
 sleep 2s
 clear
-# Hackerman -------------------------------------------------------
+# Hackerman -----------------------------------
+# Hackerman --------------------------------------------------------
 
-echo -e "${seta} ${blue}Instalando o xfce4-terminal${end}"
-yay -S xfce4-terminal-git arc-dark-xfce4-terminal --noconfirm
+echo -e "${seta} ${blue}Instalando o gnome-terminal-transparency${end}"
+yay -S gnome-terminal-transparency --noconfirm
 sleep 2s
 clear
 
@@ -192,61 +170,15 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Iniciando o xdg-update${end}"
+xdg-user-dirs-update
 sleep 2s
-if xdg-user-dirs-update; then
-    echo -e "${seta} ${green}O xdg-update foi iniciado com sucesso!${end}"
-    sleep 2s
-    clear
-else
-    echo -e "${seta} ${red}Não foi possível iniciar o xdg-update!${end}"
-    sleep 2s
-    clear
-    continue 
-fi
 
-echo -en "${seta} ${blue}Digite${end} ${red}[ 1 ]${end} ${blue}para instalar o gdm ou${end} ${red}[ 2 ]${end} ${blue}para instalar o lightdm${end} "
-read resposta
+echo -e "${seta} ${blue}Instalando o gdm${end}"
+instalar_gdm 
+sleep 2s
 clear
 
-if [ "$resposta" -eq 1 ]; then
-    echo -e "${seta} ${blue}Instalando o gdm${end}"
-    instalar_gdm 
-    sleep 2s
-    clear
-
-    echo -e "${seta} ${blue}Iniciando o serviço do gdm${end}"
-    iniciar_gdm
-    sleep 2s
-    clear
-elif [ "$resposta" -eq 2 ]; then
-    echo -e "${seta} ${blue}Instalando o lightdm${end}"
-    instalar_lightdm
-    sleep 2s
-    clear
-
-    echo -e "${seta} ${blue}Instalando o lightdm-unity-greeter${end}"
-    unity_greeter
-    sleep 2s
-    clear
-
-    echo -e "${seta} ${blue}Instalando o gtk_greeter_settings${end}"
-    gtk_greeter_settings
-    sleep 2s
-    clear
-    
-    echo -e "${seta} ${blue}Configurando o lightdm${end}"
-    configurar_lightdm
-    echo
-    echo -e "${seta} ${yellow}Aperte enter para continuar...${end}"
-    read
-    clear
-
-    echo -e "${seta} ${blue}Iniciando o serviço do lightdm${end}"
-    iniciar_lightdm
-    sleep 2s
-    clear
-else
-    echo -e "${seta} ${red}Resposta inválida!${end}"
-    exit 1
-fi
-
+echo -e "${seta} ${blue}Iniciando o serviço do gdm${end}"
+iniciar_gdm
+sleep 2s
+clear

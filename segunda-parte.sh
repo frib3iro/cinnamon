@@ -12,7 +12,7 @@ end='\e[m'
 seta='\e[32;1m==>\e[m'
 
 clear
-echo -e "${seta} ${blue}Bem vido a segunda parte da instalação!${end}"
+echo -e "${seta} ${blue}Bem vindo a segunda parte da instalação!${end}"
 sleep 2s
 clear
 
@@ -96,12 +96,12 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o GRUB${end}"
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/UEFI --bootloader-id=GRUB
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Configurando o grub${end}"
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/UEFI/grub/grub.cfg
 sleep 2s
 clear
 
