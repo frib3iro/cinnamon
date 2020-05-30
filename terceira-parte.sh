@@ -107,11 +107,15 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o crunch${end}"
-yay -S --noconfirm crunch
+yay -S crunch --noconfirm
 sleep 2s
 clear
-# Hackerman -----------------------------------
-# Hackerman --------------------------------------------------------
+# Hackerman -------------------------------------------------------
+
+echo -e "${seta} ${blue}Instalando o mint-backgrounds${end}"
+yay -S mint-backgrounds --noconfirm
+sleep 2s
+clear
 
 echo -e "${seta} ${blue}Instalando o gnome-terminal-transparency${end}"
 yay -S gnome-terminal-transparency --noconfirm
@@ -119,53 +123,53 @@ sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o kid3-cli para o lollypop${end}"
-yay -S --noconfirm kid3-cli
+yay -S kid3-cli --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando os${end} ${yellow}firmwares warnigs${end} ${blue}do archlinux${end}"
-yay -S --noconfirm aic94xx-firmware wd719x-firmware
+yay -S aic94xx-firmware wd719x-firmware --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o debtap${end}"
-yay -S --noconfirm debtap
+yay -S debtap --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando cinnamon-sound-effects${end}"
-yay -S --noconfirm cinnamon-sound-effects
+yay -S cinnamon-sound-effects --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando spotify${end}"
-yay -S --noconfirm spotify
+yay -S spotify --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o xviewer${end}"
-yay -S --noconfirm xviewer xviewer-plugins
+yay -S xviewer xviewer-plugins --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando as fontes${end}"
-yay -S --noconfirm ttf-ms-fonts
-yay -S --noconfirm ttf-ubuntu-font-family
+yay -S ttf-ms-fonts --noconfirm
+yay -S ttf-ubuntu-font-family --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o mint-themes${end}"
-yay -S --noconfirm mint-themes mint-y-icons mintlocale
+yay -S mint-themes mint-y-icons mintlocale --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o gnome-online-accounts-git${end}"
-yay -S --noconfirm gnome-online-accounts-git
+yay -S gnome-online-accounts-git --noconfirm
 sleep 2s
 clear
 
 echo -e "${seta} ${blue}Instalando o google-chrome${end}"
-yay -S --noconfirm google-chrome
+yay -S google-chrome --noconfirm
 sleep 2s
 clear
 

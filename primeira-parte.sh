@@ -51,11 +51,6 @@ read disco
 disco=/dev/${disco}
 clear
 
-# Iniciando particionamento
-echo -e "${seta} ${blue}Iniciando particionamento${end}"
-sleep 2s
-clear
-
 echo -en "${seta} ${blue}Digite${end} ${red}[ 1 ]${end} ${blue}para maquina maquina_virtual e${end} ${red}[ 2 ]${end} ${blue}para maquina maquina_real:${end} "
 read resposta
 clear
