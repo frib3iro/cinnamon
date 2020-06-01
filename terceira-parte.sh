@@ -100,6 +100,11 @@ makepkg -si --noconfirm
 sleep 2s
 clear
 
+echo -e "${seta} ${blue}Instalando o timeshift${end}"
+yay -S timeshift --noconfirm
+sleep 2s
+clear
+
 # Hackerman -------------------------------------------------------
 echo -e "${seta} ${blue}Instalando aircrack-ng e usbutils${end}"
 echo $pass_user | sudo -S pacman -S aircrack-ng usbutils --noconfirm
