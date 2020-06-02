@@ -142,6 +142,18 @@ sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sleep 2s
 clear
 
+echo -e "${seta} ${blue}Definindo o layout do teclado no xorg${end}"
+sleep 2s
+cat >> '/etc/X11/xorg.conf.d/10-keyboard.conf' <<   EOF
+Section "InputClass"
+    Identifier "keyboard default"
+    MatchIsKeyboard "yes"
+    Option "XkbLayout" "br"
+    Option "XkbVariant" "abnt2"
+EndSection
+EOF
+clear
+
 # Reiniciando
 echo -e "${seta} ${blue}Reinicie o sistema para continuar com a terceira parte!${end}"
 sleep 2s
