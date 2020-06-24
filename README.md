@@ -1,4 +1,2 @@
-# git
-Shell script para instalação do arch linux
-# deepin
-# deepin
+# cinnamon
+Shell script para instalação do cinnamon no archlinux
