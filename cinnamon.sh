@@ -30,7 +30,7 @@ iniciar_gdm(){
 
 # Tela de boas vindas
 clear
-echo -e "${seta} ${blue}Bem vindo a terceira parte da instalação!${end}"
+echo -e "${seta} ${blue}Bem vindo a instalação do Cinnamon!${end}"
 sleep 2s
 clear
 
@@ -73,28 +73,7 @@ clear
 
 echo -e "${seta} ${blue}Instalando pacotes necessários${end}"
 sleep 2s
-echo $pass_user | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer gimp gnome-bluetooth gedit gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop powerline-fonts libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch pass rsync system-config-printer tcpdump totem ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics xcursor-vanilla-dmz-aa xclip xreader youtube-dl --noconfirm
-clear
-
-echo -e "${seta} ${blue}Instalando o virt-manager${end}"
-sleep 2s
-echo $pass_user | sudo -S pacman -S qemu virt-manager dnsmasq libvirt ebtables bridge-utils edk2-ovmf spice-vdagent --noconfirm
-clear
-
-echo -e "${seta} ${blue}Iniciando o daemon libvirt${end}"
-sleep 2s
-echo $pass_user | sudo -S systemctl enable libvirtd.service
-echo $pass_user | sudo -S systemctl start libvirtd.service
-clear
-
-echo -e "${seta} ${blue}Inserindo o usuário no grupo libvirt${end}"
-sleep 2s
-echo $pass_user | sudo -S usermod -aG libvirt $USER
-clear
-
-echo -e "${seta} ${blue}Configurando a rede do virt-manager para iniciar automáticamente${end}"
-sleep 2s
-echo $pass_user | sudo -S virsh net-autostart --network default
+echo $pass_user | sudo -S pacman -S accountsservice alsa-utils archlinux-keyring archlinux-wallpaper baobab bash-completion blueberry bluez bluez-cups bluez-tools bolt cmatrix colord coreutils cpio cronie dialog ffmpegthumbnailer grub-customizer gimp gnome-bluetooth gedit gnome-calculator gnome-calendar gnome-disk-utility gnome-keyring gnome-menus gnome-online-accounts gnome-power-manager gnome-screenshot gnome-settings-daemon gnome-system-monitor gnupg gst-libav gufw htop powerline-fonts libreoffice libreoffice-fresh-pt-br lollypop man-db metacity mtools neofetch pass rsync system-config-printer tcpdump totem ttf-hack gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols ufw unrar xdg-user-dirs xdg-utils xf86-input-synaptics xcursor-vanilla-dmz-aa xclip xreader youtube-dl --noconfirm
 clear
 
 echo -e "${seta} ${blue}Instalando o yay${end}"
